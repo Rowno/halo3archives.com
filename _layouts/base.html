@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <title>{% if page.title %}{{ page.title }} : {% endif %}{{ site.title }}</title>
+
+    {% if page.keywords %}
+        <meta name="keywords" content="{{ page.keywords | join:', ' }}" />
+    {% endif %}
+    <meta name="author" content="Roland Warmerdam" />
+    <meta name="copyright" content="{{ site.copyright }}" />
+    <meta name="language" content="en" />
+
+    <link href="{{ site.baseurl }}/styles.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21361814-3']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_trackPageLoadTime']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="header">
+            <img src="{{ site.baseurl }}/images/banner.jpg" alt="Halo 3 Archives" />
+        </div>
+
+        <div class="menu">
+            <a name="top"></a>
+            <div class="left">
+            </div>
+
+                <div class="section">
+                    <a href="{{ site.baseurl }}/">Home</a>
+                </div>
+
+                <div class="section">
+                    <a class="highlight" href="{{ site.baseurl }}/armor/">Armor</a>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}/armor/armor-generator/">Armor Generator</a></li>
+                        <li><a href="{{ site.baseurl }}/armor/emblem-generator/">Emblem Generator</a></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <a href="{{ site.baseurl }}/skulls/">Skulls</a>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}/skulls/blind/">Blind</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/iron/">Iron</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/black-eye/">Black Eye</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/grunt-birthday-party/">Grunt Birthday Party</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/tough-luck/">Tough Luck</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/catch/">Catch</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/fog/">Fog</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/famine/">Famine</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/cowbell/">Cowbell</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/thunderstorm/">Thunderstorm</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/iwhbyd/">IWHBYD</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/tilt/">Tilt</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/mythic/">Mythic</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/assembly/">Assembly</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/orbital/">Orbital</a></li>
+                        <li><a href="{{ site.baseurl }}/skulls/sandbox/">Sandbox</a></li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <a href="{{ site.baseurl }}/terminals/">Terminals</a>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}/terminals/1/">Terminal 1</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/2/">Terminal 2</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/3/">Terminal 3</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/4/">Terminal 4</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/5/">Terminal 5</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/6/">Terminal 6</a></li>
+                        <li><a href="{{ site.baseurl }}/terminals/7/">Terminal 7</a></li>
+                    </ul>
+                </div>
+
+            <div class="right">
+            </div>
+        </div>
+        <div class="content">
+
+            {{ content }}
+
+            <p class="center" style="padding-top: 15px;">
+                <a href="http://www.linode.com/?r=65f866a7004f627ae37fa3283f8a89b4fa9cecbe">
+                    <img src="{{ site.baseurl }}/images/linode.png" alt="hosting provided by linode.com" />
+                </a>
+            </p>
+
+            <div class="center"><a href="#top">Top of Page</a></div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ site.baseurl }}/javascript/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            // Drop down menu
+            $('.section').hover(function(){
+                $('ul:hidden', this).show();
+            }, function(){
+                $('ul', this).hide();
+            });
+        });
+    </script>
+</body>
+</html>
+

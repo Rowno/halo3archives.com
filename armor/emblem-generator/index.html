@@ -1,0 +1,376 @@
+---
+layout: page
+title: Emblem Generator
+keywords: [emblem generator, armor, halo 3 archives, halo 3]
+---
+
+Select the icon, background and colors that you want and a picture of your selected emblem will then automatically be generated, along with a direct link to the picture.<br />
+<br />
+All of the emblem pictures are loaded from <a href="http://www.bungie.net">Bungie.net</a>. <br />
+<br />
+
+<div id="emblemGenerator">
+    <form action="#">
+        <table summary="Emblem generation options" cellspacing="0">
+            <tr>
+                <td>
+                    <label for="icon">Icon: </label>
+                </td>
+                <td style="width: 200px">
+                    <select id="icon" onchange="emblemGenerator.update()">
+                        <option value="0">Seventh Column</option>
+                        <option value="1">Bulleyes</option>
+                        <option value="2">Vertex</option>
+                        <option value="3">Halt</option>
+                        <option value="4">Spartan</option>
+                        <option value="5">Da Bomb</option>
+                        <option value="6">Trinity</option>
+                        <option value="7">Delta</option>
+                        <option value="8">Rampancy</option>
+                        <option value="9">Stuck</option>
+                        <option value="10">Phoenix</option>
+                        <option value="11">Champion</option>
+                        <option value="12">Jolly Roger</option>
+                        <option value="13">Marathon</option>
+                        <option value="14">Cube</option>
+                        <option value="15">Radioactive</option>
+                        <option value="16">Smily</option>
+                        <option value="17">Frowney</option>
+                        <option value="18">Superhead</option>
+                        <option value="19">Sol</option>
+                        <option value="20">Double Crescent</option>
+                        <option value="21">Yin Yang</option>
+                        <option value="22">Helmet</option>
+                        <option value="23">Triad</option>
+                        <option value="24">Grunt Symbol</option>
+                        <option value="25">Surf</option>
+                        <option value="26">Thor</option>
+                        <option value="27">Skull King</option>
+                        <option value="28">Triplicate</option>
+                        <option value="29">Subnova</option>
+                        <option value="30">Flaming Ninja</option>
+                        <option value="31">Pirate</option>
+                        <option value="32">Spades</option>
+                        <option value="33">Clubs</option>
+                        <option value="34">Diamonds</option>
+                        <option value="35">Hearts</option>
+                        <option value="36">Wasp</option>
+                        <option value="37">Mark of Shame</option>
+                        <option value="38">Snake</option>
+                        <option value="39">Hawk</option>
+                        <option value="40">Lips</option>
+                        <option value="41">Capsule</option>
+                        <option value="42">Tsantsa</option>
+                        <option value="43">Gas Mask</option>
+                        <option value="44">Gernade</option>
+                        <option value="45">Spartan Helmet</option>
+                        <option value="46">Cancel</option>
+                        <option value="47">Valkyria</option>
+                        <option value="48">Drone</option>
+                        <option value="49">Grunt</option>
+                        <option value="50">Grunt Head</option>
+                        <option value="51">Brute Head</option>
+                        <option value="52">Runes</option>
+                        <option value="53">Trident</option>
+                        <option value="54">Crossed Swords</option>
+                        <option value="55">Unicorn</option>
+                        <option value="56">Wolf</option>
+                        <option value="57">Bubble Shield</option>
+                        <option value="58">Trip Mine</option>
+                        <option value="59">Daisho</option>
+                        <option value="60">Daisy</option>
+                        <option value="61">Crosshair</option>
+                        <option value="62">The Librarian</option>
+                        <option value="63">Tomcat</option>
+                        <option value="64">Supernova</option>
+                        <option value="65">Fieur de Lis</option>
+                        <option value="66">Bear Claw</option>
+                        <option value="67">Flaming Horns</option>
+                        <option value="68">Black Widow</option>
+                        <option value="69">Ohnoudnt</option>
+                        <option value="70">Number One</option>
+                        <option value="71">Number Two</option>
+                        <option value="72">Number Three</option>
+                        <option value="73">Number Four</option>
+                        <option value="74">Number Five</option>
+                        <option value="75">Number Six</option>
+                        <option value="76">Number Seven</option>
+                        <option value="77">Number Eight</option>
+                        <option value="78">Number Nine</option>
+                        <option value="79">Number Zero</option>
+                    </select>
+                </td>
+                <td rowspan="8">
+                <a id="emblemLink">
+                    <img id="emblem" src="http://www.bungie.net/Stats/emblem.ashx?s=120&amp;0=0&amp;1=0&amp;2=0&amp;3=0&amp;fi=0&amp;bi=0&amp;fl=1&amp;m=1" alt="Generated Emblem" />
+                </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="background">Background: </label>
+                </td>
+                <td>
+                    <select id="background" onchange="emblemGenerator.update()">
+                        <option value="0">Blank</option>
+                        <option value="1">Circle</option>
+                        <option value="2">Diamond</option>
+                        <option value="3">Plus</option>
+                        <option value="4">Square</option>
+                        <option value="5">Triangle</option>
+                        <option value="6">Vertical Stripe</option>
+                        <option value="7">Horizontal Stripe</option>
+                        <option value="8">Cleft</option>
+                        <option value="9">Crisscross</option>
+                        <option value="10">Chalice</option>
+                        <option value="11">8 Pointed Star</option>
+                        <option value="12">Star</option>
+                        <option value="13">Cowboy Hat</option>
+                        <option value="14">Thick Star</option>
+                        <option value="15">Banner</option>
+                        <option value="16">4 Diamonds</option>
+                        <option value="17">Sun</option>
+                        <option value="18">Hexagon</option>
+                        <option value="19">Vertical Hexagon</option>
+                        <option value="20">Octagon</option>
+                        <option value="21">Pentagon</option>
+                        <option value="22">Inverted Pentagon</option>
+                        <option value="23">Racing Stripes</option>
+                        <option value="24">Horizontal Stripes</option>
+                        <option value="25">Gradient</option>
+                        <option value="26">Horizontal Gradient</option>
+                        <option value="27">Oval</option>
+                        <option value="28">Vertical Oval</option>
+                        <option value="29">Blunt Diamond</option>
+                        <option value="30">Blunt Diamond 2</option>
+                        <option value="31">Sharp Diamond</option>
+                        <option value="32">Sharp Diamond 2</option>
+                        <option value="33">Aero</option>
+                        <option value="34">Delta Wing</option>
+                        <option value="35">Asterisk</option>
+                        <option value="36">Blame</option>
+                        <option value="37">Blame 2</option>
+                        <option value="38">Shield</option>
+                        <option value="39">Display</option>
+                        <option value="40">Dreamcatcher</option>
+                        <option value="41">Buzz Saw</option>
+                        <option value="42">Four Plots</option>
+                        <option value="43">Ball O'Fire</option>
+                        <option value="44">Cog</option>
+                        <option value="45">Sprocket</option>
+                        <option value="46">Face Mask</option>
+                        <option value="47">Face Mask 2</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="toggle-icon">Toggle Icon: </label>
+                </td>
+                <td>
+                    <input id="toggle-icon" type="checkbox" onclick="emblemGenerator.update()" checked="checked" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="primary-color">Primary Color: </label>
+                </td>
+                <td>
+                    <select id="primary-color" onchange="emblemGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="secondary-color">Secondary Color: </label>
+                </td>
+                <td>
+                    <select id="secondary-color" onchange="emblemGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="background-color">Background Color: </label>
+                </td>
+                <td>
+                    <select id="background-color" onchange="emblemGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="primary-armor-color">Primary Armor Color: </label>
+                </td>
+                <td>
+                    <select id="primary-armor-color" onchange="emblemGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+<!--
+var emblemGenerator = function()
+{
+    window.onload = function() { public.update(); }
+
+    var public = { };
+    public.update = function()
+    {
+        var icon               = document.getElementById( "icon" ).selectedIndex;
+        var background         = document.getElementById( "background" ).selectedIndex;
+        var toggleIcon         = document.getElementById( "toggle-icon" ).checked;
+        var primaryColor       = document.getElementById( "primary-color" ).selectedIndex;
+        var secondaryColor     = document.getElementById( "secondary-color" ).selectedIndex;
+        var backgroundColor    = document.getElementById( "background-color" ).selectedIndex;
+        var primaryArmorColor  = document.getElementById( "primary-armor-color" ).selectedIndex;
+
+        if ( toggleIcon )
+            toggleIcon = 1;
+        else
+            toggleIcon = 0;
+
+        var url = "http://www.bungie.net/Stats/emblem.ashx?s=120&0=" + primaryArmorColor + "&1=" + backgroundColor + "&2=" + secondaryColor + "&3=" + primaryColor + "&fi=" + icon + "&bi=" + background + "&fl=" + toggleIcon + "&m=1";
+
+        document.getElementById( "emblem" ).src = url;
+        document.getElementById( "emblemLink" ).href = url;
+    }
+
+    return public;
+}();
+-->
+</script>

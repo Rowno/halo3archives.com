@@ -1,0 +1,9 @@
+# VARIABLES
+# ---------
+title: Halo 3 Archives
+copyright: "Copyright 2009 Webspirited. All Rights Reserved."
+
+
+# JEKYLL
+# ------
+exclude: ['Makefile']

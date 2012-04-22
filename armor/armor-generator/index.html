@@ -1,0 +1,540 @@
+---
+layout: page
+title: Armor Generator
+keywords: [armor generator, armor, halo 3 archives, halo 3]
+---
+
+Select the armor pieces and colors that you want and a picture of your selected armor will automatically be generated, along with how to unlock the separate pieces of armor and a direct link to the picture.<br />
+<br />
+To find out the Development and History of an armor type, select all the armor pieces of that armor type. For armor types that don't use all the armor pieces, select Mark VI as a replacement for those non existent armor pieces.<br />
+<br />
+All of the armor pictures are loaded from <a href="http://www.bungie.net">Bungie.net</a>.<br />
+<br />
+
+<div id="armorGenerator">
+    <form action="#">
+        <table summary="Armor generation options" cellspacing="0">
+            <tr>
+                <td>
+                    <label for="race">Race: </label>
+                </td>
+                <td style="width: 160px">
+                    <select id="race" onchange="armorGenerator.changeRace()">
+                        <option>Spartan</option>
+                        <option>Elite</option>
+                    </select>
+                </td>
+                <td rowspan="14">
+                <a id="armorLink">
+                    <img id="armor" src="http://www.bungie.net/Stats/Halo3/PlayerModel.ashx?p1=0&amp;p2=0&amp;p3=0&amp;p4=0&amp;p5=0&amp;p6=0&amp;p7=0&amp;p8=0" alt="Generated Armor" />
+                </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;
+                </td>
+            </tr>
+
+            <tr class="spartan">
+                <td>
+                    <label for="spartan-helmet">Helmet: </label>
+                </td>
+                <td>
+                    <select id="spartan-helmet" onchange="armorGenerator.update()">
+                        <option>Mark VI</option>
+                        <option>CQB</option>
+                        <option>EVA</option>
+                        <option>Recon</option>
+                        <option>EOD</option>
+                        <option>Hayabusa</option>
+                        <option>Security</option>
+                        <option>Scout</option>
+                        <option>ODST</option>
+                        <option>Mark V</option>
+                        <option>Rogue</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="spartan">
+                <td>
+                    <label for="spartan-left-shoulder">Left Shoulder: </label>
+                </td>
+                <td>
+                    <select id="spartan-left-shoulder" onchange="armorGenerator.update()">
+                        <option>Mark VI</option>
+                        <option>CQB</option>
+                        <option>EVA</option>
+                        <option>Recon</option>
+                        <option>EOD</option>
+                        <option>Hayabusa</option>
+                        <option>Security</option>
+                        <option>Scout</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="spartan">
+                <td>
+                    <label for="spartan-right-shoulder">Right Shoulder: </label>
+                </td>
+                <td>
+                    <select id="spartan-right-shoulder" onchange="armorGenerator.update()">
+                        <option>Mark VI</option>
+                        <option>CQB</option>
+                        <option>EVA</option>
+                        <option>Recon</option>
+                        <option>EOD</option>
+                        <option>Hayabusa</option>
+                        <option>Security</option>
+                        <option>Scout</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="spartan">
+                <td>
+                    <label for="spartan-body">Body: </label>
+                </td>
+                <td>
+                    <select id="spartan-body" onchange="armorGenerator.update()">
+                        <option>Mark VI</option>
+                        <option>CQB</option>
+                        <option>EVA</option>
+                        <option>Recon</option>
+                        <option>Hayabusa</option>
+                        <option>EOD</option>
+                        <option>Scout</option>
+                        <option>Katana</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="elite" style="display: none;">
+                <td>
+                    <label for="elite-helmet">Helmet: </label>
+                </td>
+                <td>
+                    <select id="elite-helmet" onchange="armorGenerator.update()">
+                        <option>Combat</option>
+                        <option>Assault</option>
+                        <option>Flight Mark</option>
+                        <option>Ascetic</option>
+                        <option>Commando</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="elite" style="display: none;">
+                <td>
+                    <label for="elite-left-shoulder">Left Shoulder: </label>
+                </td>
+                <td>
+                    <select id="elite-left-shoulder" onchange="armorGenerator.update()">
+                        <option>Combat</option>
+                        <option>Assault</option>
+                        <option>Flight Mark</option>
+                        <option>Ascetic</option>
+                        <option>Commando</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="elite" style="display: none;">
+                <td>
+                    <label for="elite-right-shoulder">Right Shoulder: </label>
+                </td>
+                <td>
+                    <select id="elite-right-shoulder" onchange="armorGenerator.update()">
+                        <option>Combat</option>
+                        <option>Assault</option>
+                        <option>Flight Mark</option>
+                        <option>Ascetic</option>
+                        <option>Commando</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr class="elite" style="display: none;">
+                <td>
+                    <label for="elite-body">Body: </label>
+                </td>
+                <td>
+                    <select id="elite-body" onchange="armorGenerator.update()">
+                        <option>Combat</option>
+                        <option>Assault</option>
+                        <option>Flight Mark</option>
+                        <option >Ascetic</option>
+                        <option>Commando</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="primary-color">Primary Color: </label>
+                </td>
+                <td>
+                    <select id="primary-color" onchange="armorGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="secondary-color">Secondary Color: </label>
+                </td>
+                <td>
+                    <select id="secondary-color" onchange="armorGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="detail-color">Detail Color: </label>
+                </td>
+                <td>
+                    <select id="detail-color" onchange="armorGenerator.update()">
+                        <option>Steel</option>
+                        <option>Silver</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Mauve</option>
+                        <option>Salmon</option>
+                        <option>Orange</option>
+                        <option>Coral</option>
+                        <option>Peach</option>
+                        <option>Gold</option>
+                        <option>Yellow</option>
+                        <option>Pale</option>
+                        <option>Sage</option>
+                        <option>Green</option>
+                        <option>Olive</option>
+                        <option>Teal</option>
+                        <option>Aqua</option>
+                        <option>Cyan</option>
+                        <option>Blue</option>
+                        <option>Cobalt</option>
+                        <option>Sapphire</option>
+                        <option>Violet</option>
+                        <option>Orchid</option>
+                        <option>Lavender</option>
+                        <option>Crimson</option>
+                        <option>Rudy Wine</option>
+                        <option>Pink</option>
+                        <option>Brown</option>
+                        <option>Tan</option>
+                        <option>Khaki</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br />
+    <br />
+
+    <h2>How to Unlock the Selected Armor</h2>
+    <table summary="How to unlock the selected armor">
+        <tr>
+            <td>
+                <label>Helmet: </label>
+            </td>
+            <td id="unlock-helmet">
+            </td>
+        </tr>
+
+        <tr>
+            <td >
+                <label>Left Shoulder: </label>
+            </td>
+            <td id="unlock-left-shoulder">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Right Shoulder: </label>
+            </td>
+            <td id="unlock-right-shoulder">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Body: </label>
+            </td>
+            <td id="unlock-body">
+            </td>
+        </tr>
+    </table>
+        <br />
+
+    <h2>Development and History:</h2>
+    <div id="history">
+    </div>
+</div>
+
+<script type="text/javascript">
+<!--
+var armorGenerator = function()
+{
+    var updateSpartanUnlock = function( helmet, leftShoulder, rightShoulder, body )
+    {
+        var unlockHelmet = new Array();
+        unlockHelmet[0] = "Unlocked by default";
+        unlockHelmet[1] = "Unlocked by default";
+        unlockHelmet[2] = "Complete the Halo 3 Campaign on Normal, Heroic, or Legendary";
+        unlockHelmet[3] = "Unlock all Vidmaster Achievements in Halo 3 and Halo 3: ODST (Road to Recon)";
+        unlockHelmet[4] = "Complete the Halo 3 Campaign on Legendary";
+        unlockHelmet[5] = "Find and unlock all 13 skulls";
+        unlockHelmet[6] = "Unlock 1000 Gamerpoints from Halo 3 (this can include the new Achievements)";
+        unlockHelmet[7] = "Unlock the Used Car Salesman Achievement";
+        unlockHelmet[8] = "Unlock the Graduate Achievement";
+        unlockHelmet[9] = "Unlock the UNSC Spartan Achievement";
+        unlockHelmet[10] = "Unlock the Spartan Officer achievement";
+
+        var unlockShoulder = new Array();
+        unlockShoulder[0] = "Unlocked by default";
+        unlockShoulder[1] = "Unlocked by default";
+        unlockShoulder[2] = "Complete The Ark on Normal, Heroic, or Legendary";
+        unlockShoulder[3] = "Unlock all Vidmaster Achievements in Halo 3 and Halo 3: ODST (Road to Recon)";
+        unlockShoulder[4] = "Complete The Ark on Legendary";
+        unlockShoulder[5] = "Find and unlock 9 skulls";
+        unlockShoulder[6] = "Unlock 750 Gamerpoints from Halo 3 (this armor piece is currently glitched but it seems to stay unlocked over 800 points)";
+        unlockShoulder[7] = "Unlock the Mongoose Mowdown Achievement";
+
+        var unlockBody = new Array();
+        unlockBody[0] = "Unlocked by default";
+        unlockBody[1] = "Unlocked by default";
+        unlockBody[2] = "Complete Tsavo Highway on Normal, Heroic, or Legendary";
+        unlockBody[3] = "Unlock all Vidmaster Achievements in Halo 3 and Halo 3: ODST (Road to Recon)";
+        unlockBody[4] = "Find and unlock 5 skulls";
+        unlockBody[5] = "Complete Tsavo Highway on Legendary";
+        unlockBody[6] = "Unlock the Too Close to the Sun Achievement";
+        unlockBody[7] = "Unlock 1000 Gamerpoints from Halo 3 (this can include the new Achievements)";
+
+        document.getElementById( "unlock-helmet" ).innerHTML = unlockHelmet[ helmet ] + ".";
+        document.getElementById( "unlock-left-shoulder" ).innerHTML = unlockShoulder[ leftShoulder ] + ".";
+        document.getElementById( "unlock-right-shoulder" ).innerHTML = unlockShoulder[ rightShoulder ] + ".";
+        document.getElementById( "unlock-body" ).innerHTML = unlockBody[ body ] + ".";
+    }
+
+    var updateEliteUnlock = function( helmet, leftShoulder, rightShoulder, body )
+    {
+        var unlockHelmet = new Array();
+        unlockHelmet[0] = "Unlocked by default";
+        unlockHelmet[1] = "Unlocked by default";
+        unlockHelmet[2] = "Complete the Halo 3 Campaign on Heroic or Legendary";
+        unlockHelmet[3] = "Unlock the Steppin' Razor achievement";
+        unlockHelmet[4] = "Unlock the Overkill achievement";
+
+        var unlockShoulder = new Array();
+        unlockShoulder[0] = "Unlocked by default";
+        unlockShoulder[1] = "Unlocked by default";
+        unlockShoulder[2] = "Complete The Ark on Heroic or Legendary";
+        unlockShoulder[3] = "Unlock the Overkill achievement";
+        unlockShoulder[4] = "Download the first Title Update";
+
+        var unlockBody = new Array();
+        unlockBody[0] = "Unlocked by default";
+        unlockBody[1] = "Unlocked by default";
+        unlockBody[2] = "Complete Tsavo Highway on Heroic or Legendary";
+        unlockBody[3] = "Unlock the Up Close and Personal achievement";
+        unlockBody[4] = "Unlock the Triple Kill achievement";
+
+        document.getElementById( "unlock-helmet" ).innerHTML = unlockHelmet[ helmet ] + ".";
+        document.getElementById( "unlock-left-shoulder" ).innerHTML = unlockShoulder[ leftShoulder ] + ".";
+        document.getElementById( "unlock-right-shoulder" ).innerHTML = unlockShoulder[ rightShoulder ] + ".";
+        document.getElementById( "unlock-body" ).innerHTML = unlockBody[ body ] + ".";
+    }
+
+    var updateSpartanHistory = function( helmet, leftShoulder, rightShoulder, body )
+    {
+        var history;
+
+        if ( helmet == 0 && leftShoulder == 0 && rightShoulder == 0 && body == 0 )
+            history = "Mjolnir Mark VI Powered Assault Armor: This is the standard issue Powered Assault Armor for Spartans as of October 2552. It is compatible with all certified Mjolnir Armor variants.";
+        else if ( helmet == 1 && leftShoulder == 1 && rightShoulder == 1 && body == 1 )
+            history = "The Mjolnir/C variant was developed and tested at UNSC Beweglichrüstungsysteme facility in Essen, Deutschland and Songnam, Hanguk, respectively, integrating feedback gathered from the Jericho VII Theater. The intent with the Mjolnir Mark VI Powered Assualt Armor/C variant was to improve survivability in close combat, specifically by looking at alternate methods of K dispersal and improving joint mobility.";
+        else if ( helmet == 2 && leftShoulder == 2 && rightShoulder == 2 && body == 2 )
+            history = "The Mjolnir/V variant was developed and tested at UNSC Low/Zero Gravity Testing Facility facility in Lister, Aigburth on Ganymede, integrating feedback gathered from the Summa Deep Space Incident. The Mjolnir/V variant focuses on increasing exoatmospheric endurance and improving mobility in zero gravity without the use of thrusters.";
+        else if ( helmet == 3 && leftShoulder == 3 && rightShoulder == 3 && body == 3 )
+            history = "The Armor was developed parallel to the Scout Armor in the B5D Ordnance Testing Facility in Swanbourne, Perth, Australia. The main aim of it was to create armor with stealth capabilities with little or no loss of endurance, specifically by reducing its IR signature, reflective surfaces, and Cherenkov radiation emission.";
+        else if ( helmet == 4 && leftShoulder == 4 && rightShoulder == 4 && body == 5 )
+            history = "The Mjolnir/EOD variant was created at UNSC Damascus Materials Testing Facility facility on Chi Ceti 4. The helmet was designed to channel the pressure wave around the user's head, significantly reducing the likelihood of decapitation. The Mjolnir/EOD variant was designed specifically to reduce the number of grabbing edges on the armor, decreasing the likelihood of dismemberment and designed specifically to protect Spartans during operations involving the handling of explosive ordnance [e.g., clearing/planting land mines, demolishing enemy structures/material].";
+        else if ( helmet == 5 && leftShoulder == 5 && rightShoulder == 5 && body == 4 || body == 7 )
+            history = "The Hayabusa is a powered battle armor system similar to the standard Mark VI MJOLNIR except stemming from Project HAYABUSA as opposed to Project: MJOLNIR. It was developed by RKD, an Earth-based think tank in the year 2536, 6 years before the Mark V entered production. It was presented to the UNSC Ordinance Committee as an answer to the self-contained powered armor problem. Advanced materials are used in the production of the Hayabusa armor reducing the weight of the, at the time, current generation armor by nearly a third.";
+        else if ( helmet == 6 && leftShoulder == 6 && rightShoulder == 6 && body == 0 )
+            history = "The MJOLNIR V(m) variant was manufactured in the Misriah Armory Facility on Mars in 2528, 14 years before the Mark V entered production. Like the Mark V, it has been upgraded to be compatible with all current generation MJOLNIR variants.";
+        else if ( helmet == 7 && leftShoulder == 7 && rightShoulder == 7 && body == 6 )
+            history = "The SCOUT and RECON projects were run as parallel projects intended to develop a single variant of the MJOLNIR Powered Assualt Armor with stealth capabilities and no impact on endurance; however, the SCOUT variant relies heavily on advanced materials. It was tested at ONI's Ordnance Testing Facility B5D at Swanbourne, Perth, Australia.";
+        else if ( helmet == 8 && leftShoulder == 0 && rightShoulder == 0 && body == 0 )
+            history = "Many technologies initially developed for Project: MJOLNIR have gained widespread adoption; the use of CTCs for body armor and helmet-integrated neural interfaces being the most visible.";
+        else if ( helmet == 9 && leftShoulder == 0 && rightShoulder == 0 && body == 0 )
+            history = "Originally issued in August 2542, all extant Mark V helmets have been upgraded with current-issue internal components and software.";
+        else if ( helmet == 10 && leftShoulder == 0 && rightShoulder == 0 && body == 0 )
+            history = "The Mark VI[A] helmet was the first of the \"privatized\" variants. manufactured by private industrial firms. With the fall of the Outer Colonies, the UNSC called upon private industry to manufacture classified war material.";
+        else
+            history = "Mixed development and history.";
+
+        document.getElementById( "history" ).innerHTML = history;
+    }
+
+    var updateEliteHistory = function( helmet, leftShoulder, rightShoulder, body )
+    {
+        var history;
+
+        if ( helmet == 0 && leftShoulder == 0 && rightShoulder == 0 && body == 0 )
+            history = "It is the basic Harness of the Elite warriors primary emphasis is to be iconic and inflict psychological trauma that can be linked back to the martial/physical pre-eminence of the Sangheili people. The Helmet has remained unchanged for eleven hundred cycles and the thoracic cage has remained unchanged for fifty generations.";
+        else if ( helmet == 1 && leftShoulder == 1 && rightShoulder == 1 && body == 1 )
+            history = "It is a reissued precovenant Elite Harness that features reinforced aligned composites buttress principle protective stratum to preserve structural coherence of underlying tissue and ultra resilient deltoid protection to aid in the concussive shock force and direct kinetic energy. Much like the Combat Harness it is also designed to be intimidating and damage the enemies psyche.";
+        else if ( helmet == 2 && leftShoulder == 2 && rightShoulder == 2 && body == 2 )
+            history = "The sealed helmet features a hyper-wave link for cleaner craft interactions and a mouth piece that retains a multi-port for use with older Tarasque-class heavy fighters and Gigas-class fighter-bombers. The more compact deltoid armor has less impact on range of actions in the cramped compartments of subluminal space craft and reduces overall fatigue in multi-phase interdiction missions. The less cumbersome cage utilizes aligned composites to postpone the onset of fatigue and the explicit primary enviroment multi-port is less restrictive that older helmet based ones.";
+        else if ( helmet == 3 && leftShoulder == 3 && rightShoulder == 3 && body == 3 )
+            history = "An Ascetic instills confidence in those loyal to the State and fear in those who would undermine it; to that end their actions are swift and their decisions final.";
+        else if ( helmet == 4 && leftShoulder == 4 && rightShoulder == 4 && body == 4 )
+            history = "It is the standard harness of the newly formed Commando unit based upon pre-contact ground forces. The helmet features hardened communication gear and uplink capabilities and the thoracic cage is streamlined for greater maneuverability in close enviroments. Lightweight construction materials and advanced internal components increase overall performance.";
+        else
+            history = "Mixed development and history.";
+
+        document.getElementById( "history" ).innerHTML = history;
+    }
+
+
+    window.onload = function() { public.update(); }
+
+    var public = { };
+    public.changeRace = function()
+    {
+        var trArray = document.getElementById( "armorGenerator" ).getElementsByTagName( "tr" );
+
+        if ( document.getElementById( "race" ).selectedIndex == 0 )
+            for ( var i = 0; i < trArray.length; i++ )
+            {
+                var tr = trArray.item( i );
+                if ( tr.className == "elite" )
+                    tr.style.display = "none";
+                else if ( tr.className == "spartan" )
+                    tr.style.display = "table-row";
+            }
+        else
+            for ( var i = 0; i < trArray.length; i++ )
+            {
+                var tr = trArray.item( i );
+                if ( tr.className == "spartan" )
+                    tr.style.display = "none";
+                else if ( tr.className == "elite" )
+                    tr.style.display = "table-row";
+            }
+
+        public.update();
+    }
+
+    public.update = function()
+    {
+        var race = document.getElementById( "race" ).selectedIndex;
+        var raceText;
+
+        if ( race == 0 )
+            raceText = "spartan";
+        else
+            raceText = "elite";
+
+        var helmet         = document.getElementById( raceText + "-helmet" ).selectedIndex;
+        var leftShoulder   = document.getElementById( raceText + "-left-shoulder" ).selectedIndex;
+        var rightShoulder  = document.getElementById( raceText + "-right-shoulder" ).selectedIndex;
+        var body           = document.getElementById( raceText + "-body" ).selectedIndex;
+
+        var primaryColor   = document.getElementById( "primary-color" ).selectedIndex;
+        var secondaryColor = document.getElementById( "secondary-color" ).selectedIndex;
+        var detailColor    = document.getElementById( "detail-color" ).selectedIndex;
+
+        if ( race == 0 )
+        {
+            updateSpartanUnlock( helmet, leftShoulder, rightShoulder, body );
+            updateSpartanHistory( helmet, leftShoulder, rightShoulder, body );
+        }
+        else
+        {
+            updateEliteUnlock( helmet, leftShoulder, rightShoulder, body );
+            updateEliteHistory( helmet, leftShoulder, rightShoulder, body );
+        }
+
+        var url = "http://www.bungie.net/Stats/Halo3/PlayerModel.ashx?p1=" + race + "&p2=" + helmet + "&p3=" + leftShoulder + "&p4=" + rightShoulder + "&p5=" + body + "&p6=" + primaryColor + "&p7=" + secondaryColor + "&p8=" + detailColor;
+
+        document.getElementById( "armor" ).src = url;
+        document.getElementById( "armorLink" ).href = url;
+    }
+
+    return public;
+}();
+-->
+</script>
