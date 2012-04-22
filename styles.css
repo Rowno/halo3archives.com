@@ -23,7 +23,7 @@ a:link {
 a:visited {
 	color: #666;
 	text-decoration: none;
-}		
+}
 a:hover {
 	color: #FFF;
 	text-decoration: none;
@@ -60,13 +60,13 @@ img { border: none; }
 .menu, .left, .right, div.section { height: 56px; }
 .menu {	background: url(images/menu.jpg); }
 .left, .right { width: 56px; }
-.left { 
+.left {
 	float: left;
 	background: url(images/menu_corners.png) left;
 }
-.right { 
+.right {
 	float: right;
-	background: url(images/menu_corners.png) right; 
+	background: url(images/menu_corners.png) right;
 }
 
 div.section {
@@ -74,7 +74,7 @@ div.section {
 	float:left;
 }
 
-.menu a { 
+.menu a {
 	display: block;
 	outline: 0;
 	color: #FFF;
@@ -104,7 +104,11 @@ div.section {
 	filter: alpha(opacity=90);
 }
 
-.section li a { 
+.section:hover ul {
+	display: block;
+}
+
+.section li a {
 	color: #999;
 	padding: 2px 5px;
 }
@@ -140,7 +144,7 @@ h2 {
 
 /*------------------------------> Generators <------------------------------*/
 
-#armorGenerator label, #emblemGenerator label { 
+#armorGenerator label, #emblemGenerator label {
 	font-weight: bold;
 	white-space: nowrap;
 	padding-right: 10px;
