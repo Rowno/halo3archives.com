@@ -7,7 +7,7 @@ auto:
 	jekyll --auto --base-url $(BASEURL)
 
 production:
-	jekyll --base-url //halo3archives.com
+	jekyll
 
 deploy: production
 	rsync -avz --delete _site/ vps:/var/www/halo3archives/htdocs/
