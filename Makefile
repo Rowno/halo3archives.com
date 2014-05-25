@@ -1,15 +1,10 @@
-BASEURL = /halo3archives.com/_site
-
 build:
-	jekyll --base-url $(BASEURL)
+	jekyll build
 
-auto:
-	jekyll --auto --base-url $(BASEURL)
+server:
+	jekyll server --watch
 
-production:
-	jekyll
-
-deploy: production
+deploy: build
 	rsync -avz --delete _site/ vps:/var/www/halo3archives/htdocs/
 
-.PHONY: build production deploy auto
+.PHONY: build server production deploy
