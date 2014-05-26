@@ -5,6 +5,6 @@ server:
 	jekyll server --watch
 
 deploy: build
-	rsync -avz --delete _site/ vps:/var/www/halo3archives/htdocs/
+	rsync -avzh --delete _site/ vps:/var/www/halo3archives.com/files/
 
 .PHONY: build server production deploy
