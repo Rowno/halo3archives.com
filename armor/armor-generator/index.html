@@ -8,7 +8,7 @@ keywords: [armor generator, armor, halo 3 archives, halo 3]
 <br />
 To find out the Development and History of an armor type, select all the armor pieces of that armor type. For armor types that don't use all the armor pieces, select Mark VI as a replacement for those non existent armor pieces.<br />
 <br />
-All of the armor pictures are loaded from <a href="http://www.bungie.net">Bungie.net</a>.<br />
+All of the armor pictures are loaded from <a href="https://www.bungie.net">Bungie.net</a>.<br />
 <br />
 <div id="armorGenerator">
     <form action="#">
@@ -25,7 +25,7 @@ All of the armor pictures are loaded from <a href="http://www.bungie.net">Bungie
                 </td>
                 <td rowspan="14">
                 <a id="armorLink">
-                    <img id="armor" src="http://www.bungie.net/Stats/Halo3/PlayerModel.ashx?p1=0&amp;p2=0&amp;p3=0&amp;p4=0&amp;p5=0&amp;p6=0&amp;p7=0&amp;p8=0" alt="Generated Armor" width="185" height="185" />
+                    <img id="armor" src="//halo.bungie.net/stats/Halo3/PlayerModel.ashx?p1=0&amp;p2=0&amp;p3=0&amp;p4=0&amp;p5=0&amp;p6=0&amp;p7=0&amp;p8=0" alt="Generated Armor" width="185" height="185" />
                 </a>
                 </td>
             </tr>
@@ -527,7 +527,7 @@ var armorGenerator = function()
             updateEliteHistory( helmet, leftShoulder, rightShoulder, body );
         }
 
-        var url = "http://www.bungie.net/Stats/Halo3/PlayerModel.ashx?p1=" + race + "&p2=" + helmet + "&p3=" + leftShoulder + "&p4=" + rightShoulder + "&p5=" + body + "&p6=" + primaryColor + "&p7=" + secondaryColor + "&p8=" + detailColor;
+        var url = "//halo.bungie.net/stats/Halo3/PlayerModel.ashx?p1=" + race + "&p2=" + helmet + "&p3=" + leftShoulder + "&p4=" + rightShoulder + "&p5=" + body + "&p6=" + primaryColor + "&p7=" + secondaryColor + "&p8=" + detailColor;
 
         document.getElementById( "armor" ).src = url;
         document.getElementById( "armorLink" ).href = url;
