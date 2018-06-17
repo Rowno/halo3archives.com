@@ -1,0 +1,12 @@
+{
+  "name": "halo3archives.com",
+  "alias": "halo3archives.com",
+  "files": ["_site"],
+  "type": "static",
+  "static": {
+    "public": "_site",
+    "trailingSlash": true,
+    "cleanUrls": true,
+    "directoryListing": false
+  }
+}
